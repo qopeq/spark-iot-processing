@@ -23,3 +23,4 @@ Aplikacja do obsługi wydarzeń z pojazdów
 
     * CarProcessorFactory, MotorcycleProcessorFactory, EvProcessorFactory, FaultProcessorFactory - ConcreteCreators / ConcreteFactories - tworzy właściwy produkt
         * create_processor() - tworzy konkretny produkt
+![alt text]([http://url/to/img.png](https://github.com/qopeq/spark-iot-processing/blob/main/Untitled%20Diagram.jpg))
