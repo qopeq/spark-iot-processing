@@ -6,10 +6,18 @@ from event_factories import *
 
 class MainProcessor:
     def __init__(self):
-        self.carEventProcessor = EventProcessorFactory().get_processor("car").create_processor()
-        self.motorcycleEventProcessor = EventProcessorFactory().get_processor("motorcycle").create_processor()
-        self.evEventProcessor = EventProcessorFactory().get_processor("ev").create_processor()
-        self.faultEventProcessor = EventProcessorFactory().get_processor("fault").create_processor()
+        
+        carEventProcessorFactory = EventProcessorFactory().get_factory("car")
+        self.carEventProcessor = carEventProcessorFactory.create_processor()
+
+        motorcycleEventProcessorFactory = EventProcessorFactory().get_factory("motorcycle")
+        self.motorcycleEventProcessor = motorcycleEventProcessorFactory.create_processor()
+        
+        evEventProcessorFactory = EventProcessorFactory().get_factory("ev")
+        self.evEventProcessor = evEventProcessorFactory.create_processor()
+        
+        faultEventProcessorFactory = EventProcessorFactory().get_factory("fault")
+        self.faultEventProcessor = faultEventProcessorFactory.create_processor()
 
     def process_events(self, event_df, batch_id):
         event_df.show()
